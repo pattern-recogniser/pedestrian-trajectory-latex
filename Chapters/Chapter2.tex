@@ -1,0 +1,45 @@
+\chapter{Related Work }
+
+A literature survey of the area was conducted, and we discuss the same in this section.
+
+\section{Traditional methods for pedestrian trajectory estimation}
+A popular choice for pedestrian state estimation are traditional time-series methods such as Bayesian filters and Kalman filters. Till today, the benchmark considered is the Kalman filter with an underlying Bayesian model.
+
+In the work of \cite{hutchison_pedestrian_2013}, a comparative study of Bayesian filters were implemented, and a Kalman filter taking into consideration a Constant Velocity (CV) model for recursive state estimation was concluded as the best when compared with other complex Interacting Multiple Model Kalman Filter. Other works such as \cite{keller_will_2014}, investigate the performance of modelling trajectory as Gaussian processes, combined with feeding in features of scene flow and motion features are able to achieve better accuracy in certain situations like stopping and starting, whereas in a state of constant movement, the Kalman filter appears to be the best. 
+
+For the purpose of this work, we do not go into the details of Bayesian filters, but it is to be born in mind that these filters are still considered a significant benchmark due to its accuracy despite the simplicity of the model. 
+
+\section{Deep Learning for pedestrian trajectory estimation}
+
+\subsection{MLP in pedestrian trajectory estimation}
+In \cite{goldhammer_pedestrians_2014}, a vanilla Neural Network with 2 intermediate layers is used for trajectory prediction using a training window of 1s and a prediction window of 2s.The ANN exhibits a better estimate of direction of the walking pedestrian, the effect of which is demonstrated by comparing metrics of prediction at 1.2s and 2.5s. 
+The difference in prediction is more pronounced at 2.5s. Overall, the ANN method exhibits a 18\% improvement in accuracy. 
+
+Further work by the same authors in 2015, was based on using Multi-layer Perceptron to learn the appropriate polynomial coefficients to model the trajectory, and use this in a polynomial setup to predict the future trajectory. This technique resulted in a 26\% increase in accuracy, suggesting that the way forward would be to use deep learning in conjunction with a traditional algorithm.
+
+In their follow up work in 2018 \cite{goldhammer_intentions_2018}, build on this to use a method they termed as 'Poly-MLP', where the trajectory prediction is done in 2 steps: in the first step, a neural network classifier is used to classify the pedestrian action into one of several states such as walking, starting, stopping, moving, and a second neural network is used, taking both the state of the walking pedestrian and the polynomial coefficients used to represent the time series, as done in their previous work in \cite{goldhammer_camera_2015}
+
+
+
+\subsection{RNNs in pedestrian trajectory estimation}
+\subsubsection{In crowd surveillance}
+Recently, Recurrent Neural Networks are rising in popularity in the context of sequence generation and prediction. Their expertise with respect to sequences make them a suitable candidate to be used in the area  time series prediction problems, and hence can be applied to the problem of predicting trajectories of pedestrians. 
+
+has been employed to model the future trajectories of pedestrians. In the work of \cite{alahi_social_2016}, human-human interaction of trajectories is modelled using a 'Social' aspect. This models how walking pedestrians might change path to accommodate other pedestrians crossing their paths. Subsequent work to include static obstacles has been done in \cite{varshneya_human_2017} and \cite{bartoli_context-aware_2017} to integrate static obstacles as well in the prediction of the path of a walking pedestrian. This has been extended to include pedestrians in far off vision to also be incorporated in the work of \cite{vemula_social_2017}
+
+As discussed earlier, CNNs work on a grid-like structure. \cite{leibe_pedestrian_2016} models pedestrian trajectories using their displacements across time as a 3-D Volume and this is fed into a Convolutional Neural Network. This is a novel method, and the modelling of trajectories as displacement helps replicate the state-of the-art.
+
+
+\cite{hasan_mx-lstm:_2018} uses estimated head pose for trajectory prediction in a technique called 'MX-LSTM'. It performs well in cases where the pedestrians are walking faster. The errors are higher when the pedestrian is walking slowly, as the head pose angle detected, does not give an accurate idea of the direction of the walking pedestrian. This might suggest that a combination of an approach of estimating velocity of the walking pedestrian combined with MX-LSTM might give better results.
+
+
+
+\subsubsection{In traffic setting}
+Recent works such as \cite{bhattacharyya_long-term_2017}, employ RNNs employing an encoder-decoder architecture and incorporate probabilistic parameters in their model, so that each prediction also outputs a confidence of the prediction. This achieves better results compared to the state-of-the-art as it is more robust to mistakes during recursive predictions.
+
+\subsection{RNN architecture}
+
+Gated Recurrent Units were introduced in \cite{cho_properties_2014}. Subsequent empirical evaluation done in the work of \cite{chung_empirical_2014} suggest that both GRU and LSTM have similar performance
+
+In the work of \cite{yin_comparative_2017}, it has been demonstrated that RNNs perform much better than CNNs in the case of sequence modelling, and hence RNNs are better suited for the purpose. Hence, in this work, we employ a GRU architecture in RNN to solve the problem of pedestrian trajectory estimation.
+

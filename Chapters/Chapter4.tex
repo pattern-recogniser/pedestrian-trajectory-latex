@@ -1,0 +1,30 @@
+\chapter{Problem Formulation and Evaluation}
+
+\section{Problem Formulation}
+Given spatial locations \( \{x_i^t, y_i^t\} \) for tracked pedestrians \(i = 1, 2, ... N\) from time steps \(t = 1, ..., T_{obs} \), predict their future locations \( \{\hat{x_i}^t, \hat{y_i}^t\} \) from \(t = T_{obs} + 1, ... T_{pred}\)
+
+\section{Evaluation}
+Different metrics were considered during evaluation. 
+\begin{enumerate}
+    
+    \item Mean Euclidean Distance
+    \cite{goldhammer_pedestrians_2014}
+    Between the estimated points \( P_{est}(x_{est},y_{est})\) along the \((x,y)\)-plane and the tracked head center positions which serve as ground truth \((P_{gt}(x_{gt}, y_{gt})\). MED sums up over all \(p\) predictions for one fixed forecasting horizon:
+    \[ MED = \frac{1}{p} \sum_{i=1}^{p} \sqrt{(x_{est,i}-x_{GT,i})^2 + (y_{est,i}-y_{GT,i})^2} \]
+    
+    \item Two-Dimensional Root Mean Square Deviation
+    \cite{goldhammer_camera_2015}
+    The \(RMS_{2D}\) is defined for all \(p\) predictions in the test data with a specific predicted time step \(t_{pred} \) as
+    \[ RMSD_{2D}(t_{pred}) = \sqrt{\frac{1}{p}\sum_{i=1}^{p}(x_{pred}(i)-x_{GT}(i))^2+(y_{pred}(i)-y_{GT}(i))^2}\]
+    with \((x_{pred},y_{pred})\) being the predicted and \((x_{GT},y_{GT})\) being the ground truth position
+    \item ASAEE (Average Specific Average Euclidean Error) \cite{goldhammer_intentions_2018}
+    \[ ASAEE = \frac{1}{N} \sum_{i=1}^{N} \frac{AEE(t_{pred(i)})}{t_{pred(i)}}  \]
+    \item Mean Squared Error
+    Also the same as Mean Euclidean Distance (MED), Average Euclidean Error(AEE)
+    
+    \item Final Displacement Error
+    %\[FDE = \frac{\sum_{i=1}^{n} \sqrt{}}{n}\]
+\end{enumerate}
+
+
+Finally, Mean Euclidean Error was considered as the final metric of evaluation, as this was the standard metric used between different papers.
