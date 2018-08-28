@@ -37,6 +37,8 @@ As discussed earlier, CNNs work on a grid-like structure. \cite{leibe_pedestrian
 \subsubsection{In traffic setting}
 Recent works such as \cite{bhattacharyya_long-term_2017}, employ RNNs employing an encoder-decoder architecture and incorporate probabilistic parameters in their model, so that each prediction also outputs a confidence of the prediction. This achieves better results compared to the state-of-the-art as it is more robust to mistakes during recursive predictions.
 
+A very recent work, Scene-LSTM \cite{manh_scene-lstm:_2018} has emerged which take into consideration the objects in the scene, achieving 80\% reduction in displacement errors.
+
 \subsection{RNN architecture}
 
 Gated Recurrent Units were introduced in \cite{cho_properties_2014}. Subsequent empirical evaluation done in the work of \cite{chung_empirical_2014} suggest that both GRU and LSTM have similar performance

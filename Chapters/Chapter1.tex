@@ -15,7 +15,7 @@ Path and trajectory are used interchangeably and mean the same in this work.
 To predict pedestrian's future trajectory based on cues and information from the current frames. 
 
 \section{Outline}
-This dissertation is structured in the following manner. Chapter 1 gives a brief introduction of the problem we are trying to solve and its relevance today. It also gives a background of Deep Learning, so that the reader is familiar with the technique to be adopted in this work. Chapter 2 presents a review of the works related to this problem. Chapter 3 details the experimental setup and the describes the dataset to be used. Chapter 4 states the problem specifically w.r.t the dataset, and establishes evaluation metrics that will be used for defining the success of the experiment. Chapter 5 details the results of the experiments and discussion.
+This dissertation is structured in the following manner. Chapter 1 gives a brief introduction of the problem we are trying to solve and its relevance today. It also gives a background of Deep Learning, so that the reader is familiar with the technique to be adopted in this work. Chapter 2 presents a review of the works related to this problem. Chapter 3 states the problem specifically w.r.t the dataset, and establishes evaluation metrics that will be used for defining the success of the experiment. Chapter 4 details the experimental setup and the describes the dataset to be used. Chapter 5 details the results of the experiments and discussion.
 
 % Write this portion after completion. Should give an overview of this document from this point. refer %https://www.ias.informatik.tu-darmstadt.de/uploads/Theses/HajiGhasemi_MScThesis_2013.pdf
 
@@ -41,7 +41,7 @@ In a more formal specification of deep learning, is a complex representation of 
 \begin{figure}
     \centering
     \includegraphics[height=0.15\paperheight]{Figures/nn_simple.png}
-    \caption{Simple Neural Network with 3 input variables predicting target variable y
+    \caption[A basic Neural Network diagram]{Simple Neural Network with 3 input variables predicting target variable y
     \cite{noauthor_neural_nodate}}
     \label{fig:NN_diagram}
 \end{figure}
@@ -72,7 +72,7 @@ In computer vision problems, images are treated as grids of cells, each having s
 \begin{figure}
     \centering
     \includegraphics[height=0.2\paperheight]{Figures/CNN_explain.png}
-    \caption{Illustration of a convolution
+    \caption[Convolution diagram]{Illustration of a convolution
     \cite{noauthor_convolutional_nodate}}
     \label{fig:convolution_diagram}
 \end{figure}
@@ -83,12 +83,10 @@ A convolution is an operation applied to an image and can be used to identify, e
 Figure \ref{fig:convolution_edge_detection} is a simple example of a convolution for edge detection. 
 
 
-
-
 \begin{figure}
     \centering
     \includegraphics[height=0.15\paperheight]{Figures/cnn_edge_detection.png}
-    \caption{Convolution for edge detection}
+    \caption[Convolution for edge detection]{Convolution for edge detection}
     \label{fig:convolution_edge_detection}
 \end{figure}
 \subsection{Recurrent Neural Networks (RNNs)}
@@ -101,7 +99,7 @@ Keeping this mind, an RNN is a modified version of a Neural Network that can tak
 \begin{figure}
     \centering
     \includegraphics[height=0.2\paperheight]{Figures/rnn_simple.png}
-    \caption{A layer in the RNN\cite{cavaioni_deeplearning_2018}}
+    \caption[Structure of an RNN]{A layer in the RNN\cite{cavaioni_deeplearning_2018}}
     \label{fig:rnn_cell}
 \end{figure}
 
@@ -110,7 +108,7 @@ Keeping this mind, an RNN is a modified version of a Neural Network that can tak
 \begin{figure}
     \centering
     \includegraphics[height=0.2\paperheight]{Figures/RNN_unit.png}
-    \caption{RNN unit\cite{cavaioni_deeplearning_2018}}
+    \caption[An RNN Unit]{RNN unit\cite{cavaioni_deeplearning_2018}}
     \label{fig:rnn_unit}
 \end{figure}
 
@@ -134,7 +132,7 @@ Due to this setup, where the error gradient has to back-propagate through multip
  \begin{figure}[h]
     \centering
     \includegraphics[height=0.25\paperheight]{Figures/GRU_cell.png}
-    \caption{GRU unit\cite{cavaioni_deeplearning_2018}}
+    \caption[GRU Unit]{GRU unit\cite{cavaioni_deeplearning_2018}}
     \label{fig:gru_unit}
 \end{figure}
 GRUs were introduced in \cite{cho_properties_2014} and \cite{chung_empirical_2014}.
@@ -156,7 +154,7 @@ LSTMs were introduced much before than GRUs, in \cite{hochreiter_long_1997}. LST
  \begin{figure}[h]
     \centering
     \includegraphics[height=0.25\paperheight]{Figures/LSTM_cell.png}
-    \caption{LSTM unit\cite{cavaioni_deeplearning_2018}}
+    \caption[LSTM Unit]{LSTM unit\cite{cavaioni_deeplearning_2018}}
     \label{fig:LSTM cell}
 \end{figure}
 

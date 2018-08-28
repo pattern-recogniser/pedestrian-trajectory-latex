@@ -1,1 +1,11 @@
 \chapter{Conclusion}
+
+In this work, pedestrian trajectory estimation has been done using a deep learning framework. The accuracy achieved is not near the state-of-the-art. 
+
+A large part of time was spent in data manipulation, and writing code to efficiently handle data so that there are no memory issues. Additionally, considerable amount of time was spent in piecing together basic aspects and knowledge about Deep Learning and implementing them in the framework used in this. Consequently, a solid knowledge about Deep Learning, combined with that of implementing frameworks has been achieved by the author, and future work in this area can be handled effortlessly.
+\section{Future Work}
+
+
+In this work, we only consider historic positions of pedestrians in predicting their future trajectory. However, in real-life scenarios, humans make decisions of walking pedestrians by looking at other contextual information such as pedestrian lights, location of other pedestrians, obstacles on the way of the pedestrian. Incorporating all the other contextual information from a scene will improve trajectory prediction. Another additional feature that could improve results is to estimate the state of the pedestrian. It is easier to estimate the next step of a pedestrian who is walking slowly at a constant speed, in contrast with a person who is accelerating or decelerating. Recognition of intermediate states such as walking, running, starting, stopping, or other actions that can increase the accuracy of predictions needs to be explored. Other body cues such as identified head pose need to be explored.
+
+Furthermore, the current setup treats the model as a black box, whereas there needs to be more effort invested in understanding the features that are inherently learnt by the model. If these can be translated into real-world features and tracked and given as input into the model, accuracy can be improved on.
